@@ -1,0 +1,281 @@
+
+
+UNROVR CUSTOMIZER OPTIONS
+
+ - This file is preapared for WordPress Customizer 
+ but you can use the css codes below to customize your template with extra css too ;)
+
+
+
+
+--------------------- Customizer > General
+
+
+	- Sound Effects (dropdown on/off)
+		default		: ON
+		class		: add class to html tag: "sound-effects"
+		
+		
+	- Mobile Zoom	: (on/off)
+	
+	
+	- Ajax 			: (on/off)
+
+
+------------------------------------------	
+	
+	
+
+
+
+
+
+--------------------- Customizer > Typography
+
+
+	- Body Font (dropdown Google Fonts List)
+		default 	: Roboto
+		css			: see below	
+	
+body,
+input,
+textarea,
+select {
+	font-family: 'Roboto', sans-serif;
+	}
+	
+
+	- Body Font Size (input:number - min:10 - max: 30 - steps:1)
+		default		: 14px
+		css			: body { font-size: 14px; }
+		
+
+	- Headings Font (dropdown Google Fonts List)
+		default 	: Poppins
+		css			: h1, .entry-title { font-family: 'Poppins', sans-serif; }
+	
+
+	- Headings Font Size (input:number - min:10 - max: 100 - steps:2)
+		default 	: 42
+		css			: @media screen and (min-width: 768px) { h1 { font-size: 42px; } }
+	
+	- Headings Font Weight (dropdown : 100-900)
+		default 	: 600
+		css			: h1, .entry-title { font-weight: 600; }
+
+
+	- Sub Headings Font (dropdown Google Fonts List)
+		default 	: Roboto
+		css			: see below
+	
+h2,
+h3,
+h4,
+h5,
+h6,
+.filters,
+.nav-menu,
+.card-nav,
+th,
+dt,
+.button,
+.catlinks a,
+input[type=submit],
+button,
+label,
+.tab-titles,
+a.more-link,
+blockquote {
+ 	font-family: 'Roboto';
+	}
+	
+
+	- Buttons Font Size (input:number - min:9 - max: 20 - steps:1)
+		default 	: 11
+		css			: input[type=submit], input[type=button], button, .button { font-size: 11px; }
+	
+	- Buttons Font Weight (dropdown : 100-900)
+		default 	: 700
+		css			: input[type=submit], input[type=button], button, .button { font-weight: 700; }
+	
+	- Buttons Letter Spacing (input:range - min:0 - max: 10 - steps:1)
+		default 	: 1
+		css			: input[type=submit], input[type=button], button, .button { letter-spacing: 1px; }
+		
+		
+	- Blog List Title Font Size (input:number - min:10 - max: 120 - steps:2)
+		default 	: 34
+		css			: @media screen and (min-width: 768px) { .blog-regular .entry-title { font-size: 34px; } }
+
+
+------------------------------------------	
+	
+	
+	
+	
+	
+	
+
+--------------------- Customizer > Colors
+
+
+	- Body Text Color (input:colorpicker)
+		default 	: #345
+		css			: body { color: #345; }
+
+
+	- Link Color (input:colorpicker)
+		default 	: #5BCF80
+		css			: a { color: #5BCF80; }
+
+
+	- Link Hover Color (input:colorpicker)
+		default 	: #5BCF80
+		css			: a:hover { color: #5BCF80; }
+	
+
+	- Menu Selected Item Color (input:colorpicker)
+		default		: #FAFF32;
+		css			: .card-nav li.current_page_item a { color: #FAFF32; }
+
+
+	- Primary Color (input:colorpicker)	
+		default 	: #4ECE99
+		css			: see below
+	
+.pagination a:hover,
+a.more-link:hover,
+.event:nth-of-type(2):after,
+.portfolio-nav a:hover,
+.skill-unit .bar .progress,
+#nprogress .bar {
+ 	background-color: #4ECE99;
+	}
+.bypostauthor > article,
+.event h3,
+input:not([type=submit]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]):focus, 
+textarea:focus, 
+input:focus, 
+select:focus,
+.tabs .tab-titles li a.active {
+	border-color: #4ECE99
+	}
+.event h3,
+.entry-title a:hover {
+	color: #4ECE99
+	}
+#nprogress .spinner-icon {
+  	border-top-color: #4ECE99; border-left-color: #4ECE99;
+	}	
+	
+	
+	
+	- Section Title Underline Color (colorpicker)
+		default		: #FDF854
+		css			: .section-title h2 i, .cat-links a, .filters li a:hover, .filters .current > a { box-shadow: inset 0 -6px 0px #FDF854; }
+	
+	
+	- Primary Button Color (colorpicker)
+		default 	: #345
+		css			: see below
+
+input[type=submit], 
+input[type=button], 
+button, 
+.button.primary {
+	color: #345; border-color: #345;
+	}
+input[type=submit]:hover, 
+input[type=button]:hover,
+button:not(.button):hover,
+.button.primary:after {
+	background: #345;
+	}
+	
+	
+	- Secondary Button Color (colorpicker)
+		default 	: #345
+		css			: see below
+
+.button.secondary { color: #345; border-color: #345; }
+.button.secondary:after { background: #345; }
+
+
+------------------------------------------
+
+
+
+
+
+		
+
+
+
+--------------------- Customizer > Home
+
+	- Intro Title Color (input:colorpicker)
+		default 	: null
+		css			: .card-intro h1 { color: #64bcc6; }
+	
+	- Intro Title Font Weight (dropdown: 100-900)
+		default 	: 700
+		css			: .card-intro h1, .site-title { font-weight: 700; }
+	
+	- Intro Title Letter Spacing (input:range - min:-10 - max: 10 - steps:1)
+		default 	: -5
+		css			: @media only screen and (min-width: 992px) { .card-intro h1 { letter-spacing: -5px; } }
+		
+	- Intro Text Font Size (input:range - min:10 - max: 36 - steps:1)
+		default 	: 25px
+		css			: @media only screen and (min-width: 992px) { .card-intro p { font-size: 25px; } }
+		
+		
+		
+	- Card Title Background color (input:colorpicker)
+		default		: #1755cf
+		css			: .card-info h2 { background: #1755cf; }
+		
+	- Card Title Text Color (input:colorpicker)
+		default		: #fff
+		css			: .card-info h2 { color: #fff; }
+		
+	- Card Title Font Size (input:range - min:9 - max: 36 - steps:1)
+		default 	: 11px
+		css			: .card-info h2 { font-size: 11px; }
+	
+	- Card Title Font Weight (dropdown: 100-900)
+		default 	: 400
+		css			: .card-info h2 { font-weight: 400; }
+	
+	- Card Title Letter Spacing (input:range - min:0 - max: 10 - steps:1)
+		default 	: 3
+		css			: .card-info h2 { letter-spacing: 3px; }
+		
+	- Card Image Mask Color  (input:colorpicker)
+		default	    : #0d3d6d
+		css			: .cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { background: #0d3d6d; }
+		
+	- Card Image Mask Opacity  (input:range - min:0 - max: 1 - steps:0.1)
+		default	    : .2
+		css			: .cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { opacity: .2; }
+	
+
+	- Grid Title Font Weight (dropdown : 100-900)
+		default 	: 700
+		css			: .media-grid h3 { font-weight: 700; }	
+	
+	- Grid Title Font Size px (input:number - min:10 - max: 30 - steps:1)
+		default 	: 18
+		css			: @media screen and (min-width: 768px) { .media-grid h3 { font-size: 18px; } }
+	
+	- Grid Title Text Transform (dropdown : None / Uppercase)
+		default 	: None
+		none-css	: .media-grid h3 { text-transform: none; }
+		uppercase-css	: .media-grid h3 { text-transform: uppercase; }
+		
+	- Grid Title Letter Spacing (input:range - min:0 - max: 10 - steps:1)
+		default 	: 0
+		css			: .media-grid h3 { letter-spacing: 0px; }	
+	
+		
+------------------------------------------

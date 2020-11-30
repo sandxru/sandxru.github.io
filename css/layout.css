@@ -1,0 +1,391 @@
+
+
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+.card-layout {
+  position: relative; max-width: 1170px; margin: 0 auto; will-change: transform, opacity;
+	}
+.card-intro {
+	padding: 30px; text-align: center; z-index: 10;
+	}
+.card-intro h1 {
+  	margin: 0 0 10px 0; line-height: 1; font-weight: 700;
+	}
+.card-intro p {
+  	max-width: 500px; margin: 20px auto; font-size: 1.0rem; font-weight: 300;
+	}
+.card {
+	margin: 0 auto; position: relative; background: #fff;
+	}
+.cover-img {
+  	position: relative; display: none;
+  	/* Firefox bug - 3D CSS transform, jagged edges */
+  	outline: 1px solid transparent;
+	}
+
+
+.no-csstransforms3d .card-layout:after {
+  	content: ""; display: table; clear: both;
+	}
+.no-csstransforms3d .card {
+  	float: right;
+	}
+.no-csstransforms3d .card::before {
+  	display: none;
+	}
+.card-3d-right-side, 
+.card-3d-bottom-side {
+  	display: none;
+	}
+.no-csstransforms3d .card-3d-right-side, 
+.no-csstransforms3d .card-3d-bottom-side {
+  	display: none;
+	}
+
+/* Close Card */
+.close-card {
+ 	display: none;
+	}
+
+.cover-media {
+	position: relative; padding-top: 70%; /*filter: blur(20px);*/ background-size: cover; background-position: center center; transition: all 0.6s;
+	}
+/* disabled blur animation due to poor mobile performance */
+/*.is-card-loaded .cover-media {
+	filter: blur(0);
+	}
+.is-card-opened .cover-media {
+	transition: all 0.6s;
+	}	*/
+
+.is-ajax-page-active .cover-media {
+	  padding-top: 60%;
+  	}
+
+/* Tablet Only Styles */
+/*@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	.card {
+	  max-width: 84%; box-shadow: 0 0 20px #e6e6e6;
+	}
+
+}*/
+
+
+/* DESKTOPS */
+@media only screen and (min-width: 992px) {
+	
+  html.one-page-layout {
+	  overflow-x: hidden;
+	  }
+  .one-page-layout:not(.is-card-open),
+  .one-page-layout:not(.is-card-open) body {
+	  overflow: hidden; height: 100%;
+	  }
+  .card-triggers .button {
+      margin-right: 15px; padding: 22px 42px;
+  	  }
+  .card-layout {
+    padding-top: 100px;
+	width: 90%;
+    height: 100vh;
+	-webkit-transition: all 0.7s;
+	-moz-transition: all 0.7s;
+	transition: all 0.7s;
+  }
+  .is-card-open .card-layout {
+    height: auto;
+    /*padding-bottom: 100px;*/
+  	}
+  .is-card-open .card-layout .card {
+	  max-width: 700px;
+	  }
+  .is-ajax-page-active .card-layout {
+	  padding-top: 0px;
+  }
+  .is-ajax-page-active .card-layout .card {
+	  max-width: 760px;
+    -webkit-transition: -webkit-transform 0.6s;
+    -moz-transition: -moz-transform 0.6s;
+    transition: all 0.6s;
+  }
+  
+  .card {
+	  max-width: 550px; 
+  	}
+	
+  .card-intro {
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    /* backface-visibility: hidden; */
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 50%;
+    padding: 0;
+    text-align: left;
+    -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
+    -moz-transition: -moz-transform 0.6s, opacity 0.6s;
+    transition: transform 0.6s, opacity 0.6s;
+  }
+  .is-card-open .card-intro {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .card-intro h1 {
+    font-size: 8vw; letter-spacing: -5px;
+  }
+  .card-intro p {
+    font-size: 25px;
+    padding: 10px 0 44px;
+    margin: 0;
+  }
+  
+  .card {
+	will-change : tranform, width;
+    margin-bottom: 0;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: center top;
+    -moz-transform-origin: center top;
+    -ms-transform-origin: center top;
+    -o-transform-origin: center top;
+    transform-origin: center top;
+    -webkit-transform: rotateX(-60deg) rotateZ(-40deg) translateX(50px) translateY(300px);
+    -moz-transform: rotateX(-60deg) rotateZ(-40deg) translateX(50px) translateY(300px);
+    -ms-transform: rotateX(-60deg) rotateZ(-40deg) translateX(50px) translateY(300px);
+    -o-transform: rotateX(-60deg) rotateZ(-40deg) translateX(50px) translateY(300px);
+    transform: rotateX(-60deg) rotateZ(-40deg) translateX(50px) translateY(300px);
+    -webkit-transition: -webkit-transform 0.6s;
+    -moz-transition: -moz-transform 0.6s;
+    transition: all 0.6s;
+    -webkit-backface-visibility: hidden;
+     backface-visibility: hidden; 
+  }
+  .card:hover {
+    -webkit-transform: rotateX(-58deg) rotateZ(-40deg) translateX(60px) translateY(290px);
+    -moz-transform: rotateX(-58deg) rotateZ(-40deg) translateX(60px) translateY(290px);
+    -ms-transform: rotateX(-58deg) rotateZ(-40deg) translateX(60px) translateY(290px);
+    -o-transform: rotateX(-58deg) rotateZ(-40deg) translateX(60px) translateY(290px);
+    transform: rotateX(-58deg) rotateZ(-40deg) translateX(60px) translateY(290px);
+  }
+  .card::before {
+    /* mockup shadow */
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 97%;
+    height: 99%;
+	
+    background: #F0F0F0;
+	box-shadow: 0 0 30px 20px #F0F0F0;
+	
+    -webkit-transform-origin: center top;
+    -moz-transform-origin: center top;
+    -ms-transform-origin: center top;
+    -o-transform-origin: center top;
+    transform-origin: center top;
+	
+    -webkit-transform: translateZ(-300px) translateX(-87%) translateY(570px);
+    -moz-transform: translateZ(-300px) translateX(-87%) translateY(570px);
+    -ms-transform: translateZ(-300px) translateX(-87%) translateY(570px);
+    -o-transform: translateZ(-300px) translateX(-87%) translateY(570px);
+    transform: translateZ(-300px) translateX(-87%) translateY(570px);
+    -webkit-transition: -webkit-transform 0.6s;
+    -moz-transition: -moz-transform 0.6s;
+    transition: transform 0.6s;
+  }
+  .is-card-open .card {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+	Z-index: 100;
+  }
+  .is-card-open .card::before {
+	  /*width: 97%; height: 99%;*/
+    -webkit-transform: translateZ(-580px) translateX(10px) translateY(10px);
+    -moz-transform: translateZ(-580px) translateX(10px) translateY(10px);
+    -ms-transform: translateZ(-580px) translateX(10px) translateY(10px);
+    -o-transform: translateZ(-580px) translateX(10px) translateY(10px);
+    transform: translateZ(-580px) translateX(10px) translateY(10px);
+  }
+  
+  
+  .card-3d-right-side, 
+  .card-3d-bottom-side {
+    display: block;
+    position: absolute;
+    left: 0;
+    /* Firefox bug - 3D CSS transform, jagged edges */
+    outline: 1px solid transparent;
+  }
+  .card-3d-right-side::after, 
+  .card-3d-bottom-side::after {
+    /* darken the right/bottom sides */
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .card-3d-right-side {
+    top: -1px;
+    width: 10px;
+    height: 100%;
+    background-size: auto 100%;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -ms-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+    -moz-transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+    -ms-transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+    -o-transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+    transform: translateZ(-1px) translateY(1px) rotateY(-90deg);
+  }
+
+  .card-3d-bottom-side {
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    background-position: bottom center;
+    background-size: 100% auto;
+    -webkit-transform-origin: center bottom;
+    -moz-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    -o-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-transform: translateZ(-1px) rotateX(-90deg);
+    -moz-transform: translateZ(-1px) rotateX(-90deg);
+    -ms-transform: translateZ(-1px) rotateX(-90deg);
+    -o-transform: translateZ(-1px) rotateX(-90deg);
+    transform: translateZ(-1px) rotateX(-90deg);
+  }
+  .card-3d-bottom-side::after {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  .close-card {
+    display: block;
+    position: fixed;
+	z-index: 200;
+    top: 40px;
+    right: 40px;
+    height: 20px;
+    width: 40px;
+    opacity: 0;
+    visibility: hidden;
+	-webkit-transition: all 0.7s;
+	-moz-transition: all 0.7s;
+	transition: all 0.4s;
+	transform: scale(0);
+  }
+  .close-card::after, .close-card::before {
+    /* these are used to create the 'X' icon */
+    content: '';
+    height: 40px;
+    width: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: #333;
+  }
+  .close-card::after {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+  .close-card::before {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    -o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+  .close-card.is-visible {
+    visibility: visible;
+    opacity: 1;
+	transform: scale(1);
+  }
+  .no-touch .close-card:hover {
+    transform: scale(1.2) rotate(540deg);
+  }
+}
+
+
+/* IE 11 FIXES */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.card {	
+    -webkit-backface-visibility: visible;
+     backface-visibility: visible; 
+	}
+  .card::before {
+    transform: translateZ(-300px) translateX(-18%) translateY(170px)
+  }
+}
+
+
+@media only screen and (min-width: 1600px) {
+  .card-intro h1 {
+    font-size: 8rem;
+  	}
+  .is-ajax-page-active .card-layout .card {
+	  max-width: 860px;
+  	}
+}
+
+
+@media only screen and (min-width: 992px) and (min-height: 800px) {
+	
+	.card-intro {
+		top: 130px;
+		}
+	.card-layout {
+		padding-top: 130px;
+		}
+	
+	}	
+
+@media only screen and (min-width: 992px) and (min-height: 900px) {
+	
+	.card-intro {
+		top: 160px;
+		}
+	.card-layout {
+		padding-top: 200px;
+		}
+	
+	}	

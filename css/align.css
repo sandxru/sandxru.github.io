@@ -1,0 +1,46 @@
+/* CONTENT ALIGNMENT */
+.aligncenter, .alignnone, .alignright, .alignleft {
+    display: block; margin: 1.6em auto; clear: both;
+	}
+.wp-caption {
+	color:#555;
+	}
+.wp-caption img {
+	border: 0 none; height: auto; margin: 0; padding: 0;
+	}
+.wp-caption-text {
+    font-size: 13px; letter-spacing: .07em; margin: 0; padding: .6em .1em 0; opacity: .7;
+	}
+.wp-caption.aligncenter { 
+	text-align: center; 
+	}
+/* TABLETS */
+@media screen and (min-width: 768px) {
+	.alignnone {
+		margin: 3em 0; 
+		}
+	.aligncenter {
+		margin: 2.2em auto; 
+		}
+	.alignleft,
+	.alignright {
+		max-width: 50%; 
+		}
+	.alignright {
+		float:right; margin: .4em 0 1em 2em;
+		}
+	.alignleft {
+		float: left; margin: .4em 2em 1em 0;
+		}
+}
+/* DESKTOPS MEDIUM */
+@media screen and (min-width: 1200px) { 
+	.content-area:not(.with-sidebar) .post .alignright, 
+	.content-area:not(.with-sidebar) .post .wp-caption.alignright {
+		max-width: 68%;	margin-right: -140px; margin-left: 2em;
+		}
+	.content-area:not(.with-sidebar) .post .alignleft, 
+	.content-area:not(.with-sidebar) .post .wp-caption.alignleft {
+		max-width: 68%;	margin-left: -140px; margin-right: 2em;
+		}	
+}
